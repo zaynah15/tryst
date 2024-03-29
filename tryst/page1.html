@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+   body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    } 
+    <div class="filter-container">
+    <label for="filter-select">Filter:</label>
+    <select id="filter-select">
+        <option value="all">All</option>
+        <option value="beaches">Beaches</option>
+        <option value="camping">Camping</option>
+        <option value="mountains">Mountains</option>
+        <!-- Add more filter options as needed -->
+    </select>
+</div>
+    .slideshow-container {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .slideshow-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 20px;
+        cursor: pointer;
+        border: none;
+        z-index: 1;
+    }
+
+    .prev {
+        left: 20px;
+    }
+
+    .next {
+        right: 20px;
+    }
+
+    .prev::after, .next::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    .prev::after {
+        border-width: 15px 15px 15px 0;
+        border-color: transparent rgba(255, 255, 255, 0.7) transparent transparent;
+        left: 10px;
+    }
+
+    .next::after {
+        border-width: 15px 0 15px 15px;
+        border-color: transparent transparent transparent rgba(255, 255, 255, 0.7);
+        right: 10px;
+    }
+    
+    .slideshow-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 15px 30px;
+        background-color: #ff7f50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        z-index: 1;
+        border-radius: 25px; /* Adjust the value for the amount of curvature */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    }
+    
+    .slideshow-icons {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-size: cover;
+    }
+    
+    .icon-instagram {
+        background-image: url('instagram.png');
+    }
+
+    .icon-youtube {
+        background-image: url('youtube.png');
+    }
+
+    .icon-facebook {
+        background-image: url('facebook.png');
+    }
+    .icon-club{
+            background-image: url('club.png');
+        }
+        .icon-wishlist {
+            background-image: url('wishlist.png'); /* Add the path to your wishlist icon */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-bg-orange">
+        <a class="navbar-brand" href="#">The Return Journey</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Matches </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">festivals</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">blog</a>
+              </li>
+           
+             
+        
+          </ul>
+        </div>
+    </nav>
+
+
+    <div class="slideshow-container">
+        <img class="slideshow-img" src="tokyo.png" alt="Slide 1">
+        <img class="slideshow-img" src="manali.png" alt="Slide 2">
+        <img class="slideshow-img" src="jaipur.png" alt="Slide 3">
+        <!-- Add more images here -->
+        <button class="prev" onclick="prevSlide()"></button>
+        <button class="next" onclick="nextSlide()"></button>
+        <button class="slideshow-button" id="slideshow-button" onclick="goToDestination()">Tokyo</button>
+        <div class="slideshow-icons">
+            <div class="icon icon-instagram" onclick="openInstagram('#tokyo')"></div>
+            <div class="icon icon-youtube" onclick="openYouTube('tokyo')"></div>
+            <div class="icon icon-facebook" onclick="openFacebook('tokyo')"></div>
+            <div class="icon icon-club" onclick="openclub('tokyo')"></div>
+            <div class="icon icon-wishlist" onclick="addToWishlist()"></div>
+        </div>
+      
+    </div>
+    
+    
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slideshow-img');
+    const slideshowButton = document.getElementById('slideshow-button');
+
+    // Array of destination objects with image source and destination name
+    const destinations = [
+        { image: 'image1.jpg', name: 'TOKYO' },
+        { image: 'image2.jpg', name: 'MANALI' },
+        { image: 'image3.jpg', name: 'JAIPUR' },
+        // Add more destinations as needed
+    ];
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.style.display = 'block';
+            } else {
+                slide.style.display = 'none';
+            }
+        });
+
+        // Update button text and destination based on current slide
+        const currentDestination = destinations[index];
+        slideshowButton.textContent = currentDestination.name;
+    }
+
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        }
+        showSlide(currentIndex);
+    }
+
+    function goToDestination() {
+        const currentDestination = destinations[currentIndex];
+        // Logic to go to the destination page based on the current slide
+        window.location.href = currentDestination.name.toLowerCase() + '.html';
+    }
+    function openInstagram() {
+        const destination = (currentIndex === 0) ? 'tokyo' : 'manali';
+        window.open('https://www.instagram.com/explore/tags/' + destination, '_blank');
+    }
+
+    function openYouTube() {
+        const destination = (currentIndex === 0) ? 'tokyo' : 'manali';
+        window.open('https://www.youtube.com/results?search_query=' + destination, '_blank');
+    }
+
+    function openFacebook() {
+        const destination = (currentIndex === 0) ? 'tokyo' : 'manali';
+        window.open('https://www.facebook.com/search/top/?q=' + destination, '_blank');
+    }
+    function openclub() {
+        const destination = (currentIndex === 0) ? 'tokyo' : 'manali';
+        window.open('https://www.club.com/search/top/?q=' + destination, '_blank');
+    }
+    function addToWishlist() {
+            const currentDestination = destinations[currentIndex];
+            // Implement the functionality to add the current slide to the wishlist
+            // You can store this information in localStorage or send it to the server
+            // For demonstration purposes, let's just log the selected destination
+            console.log('Added to wishlist:', currentDestination);
+        }
+
+    
+    showSlide(currentIndex);
+   
+</script>
+</body>
+</html>
