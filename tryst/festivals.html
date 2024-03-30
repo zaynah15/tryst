@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: rgb(43, 44, 44);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding-top: 70px;
+        }
+        .card-text {
+    color: white; /* Dark color for card text */
+}
+.card-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #c63e3e; /* Dark color for card title */
+}
+
+
+
+        .container {
+            padding: 20px;
+            color:white;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .event-info {
+            margin-top: 10px;
+            color:white;
+        }
+
+        .price-tag {
+            font-size: 18px;
+            color: #FF5733; /* Orangish color for price */
+            font-weight: bold;
+        }
+
+        .special-price {
+            font-size: 16px;
+            color: #ff79cd; /* Pink color for special price */
+        }
+
+        .btn-primary {
+            background-color: #FF5733 !important; /* Orangish color for buttons */
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .animation {
+            animation-name: slide-in;
+            animation-duration: 1s;
+            color:white;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">The Return Journey</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">5000 Rupee Traveller</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Itinerary
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="heading mt-5 mb-3 animation text-light">Upcoming Festivals and Concerts</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/LQxzDESIUzB4lOsFtLjvKVbi5ndE17yIkGteL_4eFTQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/Njk3OTMyNi9waG90/by9jb25jZXJ0LWlu/LWNpdHktcGFyay1z/dW1tZXItdGltZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/NHF5aDd3M0o0UHlS/TU1XdDUzRlRYLW4z/UHNfUXVnTUFyRXBY/czNlOEhNWT0" class="card-img-top" alt="Festival Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Summer Music Festival</h5>
+                        <p class="card-text">Join us for a lively music festival celebrating summer vibes!</p>
+                        <div class="event-info">
+                            <span class="price-tag">Price: ₹2000</span>
+                            <span class="special-price">Special Price: ₹1500</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/jpr5BXsD_g6CGv4ZbdtKji8Le3MixgDWKSfhWS_uLiM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/Y2Fybml2YWwtcmlk/ZXMuanBnP3dpZHRo/PTEwMDAmZm9ybWF0/PXBqcGcmZXhpZj0w/JmlwdGM9MA" class="card-img-top" alt="Festival Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Spring Carnival</h5>
+                        <p class="card-text">Celebrate the arrival of spring with our exciting carnival!</p>
+                        <div class="event-info">
+                            <span class="price-tag">Price: ₹1800</span>
+                            <span class="special-price">Special Price: ₹1200</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/G_FqwvmFDZHNBJbU44oTgBvUMs8qeqfYCmIXoTr1FKg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE5/MDM2MDAyOS9waG90/by9oeWRlLXBhcmst/d2ludGVyLXdvbmRl/cmxhbmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPVE1d1JM/bTFpVDJtQkJleU9S/dFJaZWhoN0RSc0pz/TjF3REdLR0tqWlZV/Um89" class="card-img-top" alt="Festival Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Winter Wonderland</h5>
+                        <p class="card-text">Experience the magic of winter with our enchanting wonderland festival!</p>
+                        <div class="event-info">
+                            <span class="price-tag">Price: ₹2500</span>
+                            <span class="special-price">Special Price: ₹2000</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Ongoing Events Section -->
+        <h2 class="heading mt-5 mb-3 animation text-light">Ongoing Events in Manali</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/st8yrNxCL-S3JqLR6e55y7h3vokgCooWskzNqSWpNjc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93b3Js/ZGV4cGVkaXRpb25z/LmNvbS9jcm9wcGVk/aW1hZ2VzL0Jsb2dz/L1dFWC9FdmVyZXN0/LXRyZWtraW5nLXJl/dmlld19FdmVyeW9u/ZS1pbi1maW5lLWZv/cm0tYXMtd2UtY2xv/c2UtaW4tb24tRUJD/LVRoZS1maW5hbC1z/dHJldGNoLmpwZy00/NjQ3NTItMzUwcHgu/anBn" class="card-img-top" alt="Ongoing Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Mountain Trekking Expedition</h5>
+                        <p class="card-text">Embark on a thrilling trekking adventure in the Himalayas.</p>
+                        <div class="event-info">
+                            <span class="price-tag">Price: ₹3000</span>
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/dxdy04oSx-0dPpVjaMu6Fa5qM1aZR7R2h9yqAt_Vpk8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHJhdmVsdHJp/YW5nbGUuY29tL2Js/b2cvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDMvRGFuZGVs/aV9yaXZlcl9yYWZ0/aW5nLmpwZw" class="card-img-top" alt="Ongoing Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title">River Rafting Adventure</h5>
+                        <p class="card-text">Experience the thrill of river rafting along the beautiful Beas River.</p>
+                        <div class="event-info">
+                            <span class="price-tag">Price: ₹2500</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://imgs.search.brave.com/HT-J1fjV7_3lTuaM4-1ZHMK2ITLT7XVqx0Up-0LnXyo/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHJhdmVsdHJp/YW5nbGUuY29tL2Js/b2cvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTUvMDkvYTcuanBn" class="card-img-top" alt="Ongoing Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Skiing Adventure</h5>
+                        <p class="card-text">Enjoy the thrill of skiing in the snow-covered slopes of Manali.</p>
+                        <div class="event-info">
+                            <span class="price-tag">Price: ₹4000</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Add more cards for other ongoing events -->
+        </div>
+        
+
+        <!-- Additional Features Section -->
+        <h2 class="heading mt-5 mb-3 animation">Additional Features</h2>
+        <div class="row">
+            <div class="col-md-6 animation">
+                <h4>Special Offers</h4>
+                <p>Check out our special offers and discounts for festival attendees!</p>
+            </div>
+            <div class="col-md-6 animation">
+                <h4>Food and Drinks</h4>
+                <p>Enjoy a variety of delicious food and drinks available at the festival grounds.</p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer mt-5 animation">
+            <p class="text-center">Copyright &copy; 2024 Festival Manali</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

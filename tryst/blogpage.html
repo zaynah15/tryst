@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .blog-post {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+        .blog-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .blog-content {
+            font-size: 16px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .user-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .publish-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .publish-icon:hover {
+            background-color: #0056b3;
+        }
+        .publish-form {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        .close-form {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Published Blogs</h2>
+        <div id="publishedBlogs"></div>
+    </div>
+
+    <div class="publish-icon" id="publishIcon">
+        <i class="fas fa-edit"></i>
+    </div>
+
+    <div class="publish-form" id="publishForm">
+        <div class="close-form" onclick="closeForm()">&times;</div>
+        <h2>Write a Blog</h2>
+        <form id="blogForm">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+            </div>
+            <button type="submit">Publish</button>
+        </form>
+    </div>
+
+    <script>
+        const publishedBlogs = []; // Array to store published blogs
+
+        document.getElementById('publishIcon').addEventListener('click', function() {
+            document.getElementById('publishForm').style.display = 'block';
+        });
+
+        document.getElementById('blogForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            
+            // Add the blog to the array of published blogs
+            publishedBlogs.push({ title, content });
+
+            // Update the displayed published blogs
+            updatePublishedBlogs();
+
+            // Clear the form fields after submission
+            document.getElementById('title').value = '';
+            document.getElementById('content').value = '';
+
+            // Hide the form after submission
+            document.getElementById('publishForm').style.display = 'none';
+        });
+
+        function updatePublishedBlogs() {
+            const publishedBlogsContainer = document.getElementById('publishedBlogs');
+            publishedBlogsContainer.innerHTML = ''; // Clear the container
+            
+            // Loop through the published blogs array and create HTML elements for each blog post
+            publishedBlogs.forEach((blog, index) => {
+                const blogPost = document.createElement('div');
+                blogPost.classList.add('blog-post');
+
+                const userInfo = document.createElement('div');
+                userInfo.classList.add('user-info');
+
+                const userIcon = document.createElement('i');
+                userIcon.classList.add('fas', 'fa-user', 'user-icon');
+
+                const blogTitle = document.createElement('div');
+                blogTitle.classList.add('blog-title');
+                blogTitle.textContent = blog.title;
+
+                const blogContent = document.createElement('div');
+                blogContent.classList.add('blog-content');
+                blogContent.textContent = blog.content;
+
+                userInfo.appendChild(userIcon);
+                blogPost.appendChild(userInfo);
+                blogPost.appendChild(blogTitle);
+                blogPost.appendChild(blogContent);
+
+                publishedBlogsContainer.appendChild(blogPost);
+            });
+        }
+
+        function closeForm() {
+            document.getElementById('publishForm').style.display = 'none';
+        }
+
+        // Call the function initially to display any previously published blogs
+        updatePublishedBlogs();
+    </script>
+</body>
+</html>

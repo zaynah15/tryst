@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles can be added here */
+        .container {
+            margin-top: 20px;
+        }
+
+        .club-card {
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+
+        .club-card:hover {
+            transform: scale(1.05);
+        }
+
+        .club-card .card-body {
+            min-height: 150px;
+        }
+
+        /* Background image for the page */
+        body {
+            background-color: rgb(13, 22, 22);
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        /* Overlay for the background image */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .custom-button {
+            margin: 20px 15px;
+            background-color: #FF5733; /* Orange color */
+            color: white;
+            padding: 15px 30px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            width: 210px; /* Adjust the height as needed */
+        }
+
+        .custom-button:hover {
+            background-color: #FF8C42; /* Lighter shade of orange on hover */
+        }
+        .cont-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15vh; /* Full viewport height */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">The Return Journey</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">5000 Rupee Traveller</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Itinerary
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <!-- Main Content Area -->
+            <div class="col-md-12">
+                <h1 class="text-center mt-4 mb-4">Welcome to our Jaipur  Community</h1>
+
+                <!-- Existing Communities Section -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card club-card" style="background-color: #FFD6C0;">
+                            <img src="https://imgs.search.brave.com/PNzxLGNoI6FkLhxkQSKSryTJzpnMp8R7CouK9DZxEmI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/d2hhdHNkYW5ueWRv/aW5nLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wMy9B/ZHZlbnR1cmVjYXJl/ZXJzLTQ3MzM3MTEu/anBnLndlYnA" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark " >Adventure Seekers</h5>
+                                <p class="card-text text-dark">Explore the world with like-minded adventurers!</p>
+                                <a href="#" class="btn btn-primary" style="background-color: #FF5733; border-color: #FF5733; color: black;" onclick="redirectAdventureSeekers()">Join Club</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more community cards as needed -->
+                    <div class="col-md-4">
+                        <div class="card club-card" style="background-color: #FFD6C0;">
+<img src="https://imgs.search.brave.com/EmPQZcd7cfv38m1PatB8ZcNdCiTsTy4K2fSW9Fk8PlI/rs:fit:500:0:0/g:ce/aHR0cDovL3d3dy5z/YXZlNzAuY29tL2Js/b2cvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTQvMDgvSGlraW5n/LU5hdHVyZS1BY3Rp/dml0aWVzLmpwZw" alt="">                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark">Nature Lovers</h5>
+                                <p class="card-text text-dark">Connect with fellow nature enthusiasts!</p>
+                                <a href="#" class="btn btn-primary" style="background-color: #FF5733; border-color: #FF5733; color: black;" onclick="redirectNatureLovers()">Join Club</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more community cards as needed -->
+                    <div class="col-md-4">
+                        <div class="card club-card" style="background-color: #FFD6C0;">
+<img src="https://imgs.search.brave.com/TPhluS3Mb_p6s6x02QMsK4ZaORFoYxnur2o9r4zDN6M/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/aWRlYWZpdC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjEv/MDkvRm9vZC1BZXN0/aGV0aWNzLTEwMjR4/NjgzLmpwZw" alt="">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-dark">Foodies Club</h5>
+                                <p class="card-text text-dark">Share your love for food and recipes!</p>
+                                <a href="#" class="btn btn-primary" style="background-color: #FF5733; border-color: #FF5733; color: black;" onclick="redirectFoodiesClub">Join Club</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more community cards as needed -->
+                </div>
+                <div class="cont-button">
+                    
+                    <button onclick="window.location.href='festivals.html'" class="custom-button">Festivals</button>
+
+                </div>
+                
+                <div class="container">
+                    <h1 class="mt-4 mb-4">Create New Community</h1>
+                    <form id="createCommunityForm">
+                        <div class="form-group">
+                            <label for="communityName">Community Name:</label>
+                            <input type="text" class="form-control" id="communityName" placeholder="Enter community name">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea class="form-control" id="description" rows="3" placeholder="Enter community description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="imageURL">Image URL:</label>
+                            <input type="text" class="form-control" id="imageURL" placeholder="Enter image URL">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category:</label>
+                            <select class="form-control" id="category">
+                                <option>Select category...</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="nature">Nature</option>
+                                <option value="food">Food</option>
+                                <!-- Add more categories as needed -->
+                            </select>
+
+                        </div>
+                    </form>
+                </div>
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('createCommunityForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        // Get form values
+        const communityName = document.getElementById('communityName').value.trim();
+        const description = document.getElementById('description').value.trim();
+        const imageURL = document.getElementById('imageURL').value.trim();
+        const category = document.getElementById('category').value;
+        
+        if (communityName === '' || description === '' || imageURL === '' || category === 'Select category...') {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Send form data to server (replace this with your actual API call or backend handling)
+        const formData = {
+            communityName,
+            description,
+            imageURL,
+            category
+        };
+        console.log('Form data:', formData);
+        // Reset the form
+        document.getElementById('createCommunityForm').reset();
+
+    });
+        // Function to redirect to Adventure Seekers page
+        function redirectAdventureSeekers() {
+            window.location.href = 'adventure.html';
+        }
+
+        // Function to redirect to Nature Lovers page
+        function redirectNatureLovers() {
+            window.location.href = 'nature.html';
+        }
+
+        // Function to redirect to Foodies Club page
+        function redirectFoodiesClub() {
+            window.location.href = 'fmanali.html';
+        }
+    
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>
+
+
